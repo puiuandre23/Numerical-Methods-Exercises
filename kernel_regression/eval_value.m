@@ -1,0 +1,14 @@
+function pred = eval_value(x, X, f, f_param, a)
+   # TO DO: pentru un vector de input x, preziceti valoarea acestuia in
+   # in functie de toti vectorii de input folositi pentru a antrena modelul
+   # folosind functia de kernel f care are ca al 3-lea parametru f_param
+   # si vectorul coloana a
+   m = size(X, 1);
+   s = 0;
+   for i = 1 : m
+      %fiecare a(i) reprezinta acel indice alfa i din enunt
+      s = s + a(i) * f(x, X(i, :), f_param);
+      %aplicam f pentru vectorul de input x si x(i)
+   end
+   pred = s; 
+endfunction
